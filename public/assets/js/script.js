@@ -3,8 +3,9 @@ const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 
 const urlImg = [
-    "./assets/img/space.jpg" ,
-    "./assets/img/bastille.jpg"  
+    
+    "./assets/img/bastille.jpg", 
+    "./assets/img/hellfest.jpg"
 ];
 
 let i = 0
