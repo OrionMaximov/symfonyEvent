@@ -67,4 +67,13 @@ class EventController extends AbstractController
             "mode" => $mode
         ]);
     }
+    /**
+     * @Route("/showAll", name="app_all")
+     */
+    public function showAll(): Response
+    {
+        return $this->render('event/list.html.twig', [
+            
+        ]);
+    }
 }
