@@ -29,12 +29,36 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{path('app_all')}}">Afficher les events</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{path('createone')}}">Créé events</a>
-                  </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link" href="#">Categories</a>
                   </li>
+                  
+                  {% if app.user %}
+                     <li class="nav-item"> 
+                      <div>
+                        <a class="nav-link">Bienvenue {{ app.user.prenom}} {{ app.user.nom}} </a><a class="nav-link" href="{{ path('app_logout') }}">  Logout</a>
+                      </div>    
+                      </li>
+                    {% else %}
+                     
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{path('app_login')}}">Connexion</a>
+                      </li>
+                      
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{path('app_registration')}}">Inscription</a>
+                      </li>
+                      
+                    {% endif %}
+                    {% if is_granted('ROLE_ADMIN')%}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('app_admin')}}">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{path('createone')}}">Créé events</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

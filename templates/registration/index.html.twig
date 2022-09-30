@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+
+{% block body %}
+{{form_start(formulaire)}}
+{% if mode %}
+{{form_widget(formulaire,{'attr':{"class":"champ"}})}}
+<button type="submit" class="btn btn-warning btn-outline-primary alignRight">Connexion</button>
+{% else %}
+{{form_widget(formulaire,{'attr':{"class":"champ"}})}}
+<button type="submit" class="btn btn-warning btn-outline-primary alignRight">Inscription</button>
+<div><button type="button" class="btn btn-primary"><a href="{{path('app_login')}}">Vous avez déjà un compte?</a></button></div>
+{% endif %}
+
+{{form_end(formulaire)}}
+{% endblock %}
